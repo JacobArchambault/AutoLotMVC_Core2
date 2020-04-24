@@ -13,9 +13,6 @@ namespace AutoLotDAL_Core2.Repos
         private readonly DbSet<T> _table;
         private readonly AutoLotContext _db;
         protected AutoLotContext Context => _db;
-        public BaseRepo() : this(new AutoLotContext())
-        {
-        }
         public BaseRepo(AutoLotContext context)
         {
             _db = context;

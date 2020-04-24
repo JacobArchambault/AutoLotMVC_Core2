@@ -12,7 +12,6 @@ namespace AutoLotDAL_Core2.EF
         public DbSet<Inventory> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
         // Constructors
-        public AutoLotContext() { }
         public AutoLotContext(DbContextOptions options) : base(options)
         {
         }

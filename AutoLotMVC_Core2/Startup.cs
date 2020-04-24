@@ -23,6 +23,10 @@ namespace AutoLotMVC_Core2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContextPool<AutoLotContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("AutoLot"),
+                o => o.EnableRetryOnFailure()));
+            services.AddScoped<IInventoryRepo, InventoryRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,9 +51,7 @@ namespace AutoLotMVC_Core2
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
