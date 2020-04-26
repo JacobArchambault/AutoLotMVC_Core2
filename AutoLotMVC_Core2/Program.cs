@@ -17,15 +17,15 @@ namespace AutoLotMVC_Core2
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
-            //var webHost = BuildWebHost(args);
-            //using (var scope = webHost.Services.CreateScope())
-            //{
-            //    var services = scope.ServiceProvider;
-            //    var context = services.GetRequiredService<AutoLotContext>();
-            //    MyDataInitializer.RecreateDatabase(context);
-            //    MyDataInitializer.InitializeData(context);
-            //}
+            var webHost = CreateHostBuilder(args).Build();
+            using (var scope = webHost.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<AutoLotContext>();
+                MyDataInitializer.RecreateDatabase(context);
+                MyDataInitializer.InitializeData(context);
+            }
+            webHost.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -34,11 +34,5 @@ namespace AutoLotMVC_Core2
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
-        //public static IWebHost BuildWebHost(string[] args) =>
-        //    WebHost.CreateDefaultBuilder(args)
-        //    .UseStartup<Startup>()
-        //    .Build();
-
     }
 }
