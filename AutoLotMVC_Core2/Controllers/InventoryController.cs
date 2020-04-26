@@ -18,7 +18,7 @@ namespace AutoLotMVC_Core2.Controllers
         // GET: Inventory
         public IActionResult Index()
         {
-            return View(_repo.GetAll());
+            return View("IndexWithViewComponent");
         }
 
         // GET: Inventory/Details/5
