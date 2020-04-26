@@ -1,7 +1,5 @@
 ﻿using AutoLotDAL_Core2.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AutoLotDAL_Core2.Repos
 {

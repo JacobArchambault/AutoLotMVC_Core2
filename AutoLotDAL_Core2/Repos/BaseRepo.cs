@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using AutoLotDAL_Core2.EF;
+﻿using AutoLotDAL_Core2.EF;
 using AutoLotDAL_Core2.Models.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 namespace AutoLotDAL_Core2.Repos
 {
     public class BaseRepo<T> : IDisposable, IRepo<T> where T : EntityBase, new()

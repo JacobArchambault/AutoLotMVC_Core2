@@ -1,7 +1,6 @@
 ﻿using AutoLotDAL_Core2.EF;
 using AutoLotDAL_Core2.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using static Microsoft.EntityFrameworkCore.EF;

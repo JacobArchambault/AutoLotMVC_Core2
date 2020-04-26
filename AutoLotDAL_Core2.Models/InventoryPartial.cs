@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using AutoLotDAL_Core2.Models.Metadata;
+﻿using AutoLotDAL_Core2.Models.Metadata;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace AutoLotDAL_Core2.Models
 {
     [ModelMetadataType(typeof(InventoryMetaData))]

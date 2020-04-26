@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoLotDAL_Core2.Repos;
+﻿using AutoLotDAL_Core2.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
+using System.Threading.Tasks;
 
 namespace AutoLotMVC_Core2.ViewComponents
 {

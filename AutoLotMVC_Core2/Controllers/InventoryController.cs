@@ -1,9 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using AutoLotDAL_Core2.Models;
+using AutoLotDAL_Core2.Repos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AutoLotDAL_Core2.Models;
-using AutoLotDAL_Core2.Repos;
+using System;
 namespace AutoLotMVC_Core2.Controllers
 {
     public class InventoryController : Controller

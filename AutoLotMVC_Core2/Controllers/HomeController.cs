@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoLotMVC_Core2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using AutoLotMVC_Core2.Models;
+using System.Diagnostics;
 
 namespace AutoLotMVC_Core2.Controllers
 {

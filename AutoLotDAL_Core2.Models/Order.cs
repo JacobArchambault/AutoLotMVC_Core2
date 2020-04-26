@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using AutoLotDAL_Core2.Models.Base;
+﻿using AutoLotDAL_Core2.Models.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace AutoLotDAL_Core2.Models
 {
     public partial class Order : EntityBase
