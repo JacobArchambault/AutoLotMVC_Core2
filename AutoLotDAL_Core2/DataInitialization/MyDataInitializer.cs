@@ -42,27 +42,6 @@ namespace AutoLotDAL_Core2.DataInitialization
             };
             orders.ForEach(x => context.Orders.Add(x));
             context.SaveChanges();
-            context.CreditRisks.Add(
-                new CreditRisk
-                {
-                    Id = customers[4].Id,
-                    FirstName = customers[4].FirstName,
-                    LastName = customers[4].LastName
-                });
-            context.Database.OpenConnection();
-            try
-            {
-                var tableName = context.GetTableName(typeof(CreditRisk));
-                var rawSqlString = $"SET IDENTITY_INSERT dbo.{tableName} ON;";
-                context.Database.ExecuteSqlCommand(rawSqlString);
-                context.SaveChanges();
-                rawSqlString = $"SET IDENTITY_INSERT dbo.{tableName} OFF";
-                context.Database.ExecuteSqlCommand(rawSqlString);
-            }
-            finally
-            {
-                context.Database.CloseConnection();
-            }
         }
         public static void RecreateDatabase(AutoLotContext context)
         {
