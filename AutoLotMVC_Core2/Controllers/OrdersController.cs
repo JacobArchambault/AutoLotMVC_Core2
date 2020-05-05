@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoLotDAL_Core2.EF;
+using AutoLotDAL_Core2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AutoLotDAL_Core2.EF;
-using AutoLotDAL_Core2.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AutoLotMVC_Core2.Controllers
 {

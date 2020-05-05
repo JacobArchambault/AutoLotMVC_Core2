@@ -1,6 +1,5 @@
 ﻿using AutoLotMVC_Core2.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace AutoLotMVC_Core2.Controllers
