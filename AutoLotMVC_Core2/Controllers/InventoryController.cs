@@ -50,7 +50,7 @@ namespace AutoLotMVC_Core2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Make,Color,PetName")] Inventory inventory)
         {
-            if (ModelState.IsValid) return View(inventory);
+            if (!ModelState.IsValid) return View(inventory);
             try 
             {
                 _repo.Add(inventory);
