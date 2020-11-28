@@ -7,7 +7,6 @@ namespace AutoLotDAL_Core2.EF
     public class AutoLotContext : DbContext
     {
         // Properties
-        public DbSet<CreditRisk> CreditRisks { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Inventory> Cars { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -26,11 +25,6 @@ namespace AutoLotDAL_Core2.EF
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // create the multi column index
-            modelBuilder.Entity<CreditRisk>(entity =>
-            {
-                entity.HasIndex(e => new { e.FirstName, e.LastName }).IsUnique();
-            });
             // set the cascade options on the relationship
             modelBuilder.Entity<Order>()
                 .HasOne(e => e.Car)

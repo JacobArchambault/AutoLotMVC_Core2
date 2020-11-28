@@ -42,27 +42,6 @@ namespace AutoLotDAL_Core2.DataInitialization
             };
             orders.ForEach(x => context.Orders.Add(x));
             context.SaveChanges();
-            context.CreditRisks.Add(
-                new CreditRisk
-                {
-                    Id = customers[4].Id,
-                    FirstName = customers[4].FirstName,
-                    LastName = customers[4].LastName
-                });
-            context.Database.OpenConnection();
-            try
-            {
-                var tableName = context.GetTableName(typeof(CreditRisk));
-                var rawSqlString = $"SET IDENTITY_INSERT dbo.{tableName} ON;";
-                context.Database.ExecuteSqlCommand(rawSqlString);
-                context.SaveChanges();
-                rawSqlString = $"SET IDENTITY_INSERT dbo.{tableName} OFF";
-                context.Database.ExecuteSqlCommand(rawSqlString);
-            }
-            finally
-            {
-                context.Database.CloseConnection();
-            }
         }
         public static void RecreateDatabase(AutoLotContext context)
         {
@@ -79,16 +58,14 @@ namespace AutoLotDAL_Core2.DataInitialization
         }
         public static void ExecuteDeleteSql(AutoLotContext context, string tableName)
         {
-            var rawSqlString = $"Delete from dbo.{tableName}";
-            context.Database.ExecuteSqlCommand(rawSqlString);
+            context.Database.ExecuteSqlInterpolated($"Delete from dbo.{tableName}");
         }
         public static void ResetIdentity(AutoLotContext context)
         {
             var tables = new[] { "Inventory", "Orders", "Customers", "CreditRisks" };
             foreach (var itm in tables)
             {
-                var rawSqlString = $"DBCC CHECKIDENT (\"dbo.{itm}\", RESEED, -1);";
-                context.Database.ExecuteSqlCommand(rawSqlString);
+                context.Database.ExecuteSqlInterpolated($"DBCC CHECKIDENT (\"dbo.{itm}\", RESEED, -1);");
             }
         }
     }

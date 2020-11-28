@@ -51,7 +51,7 @@ namespace AutoLotMVC_Core2.Controllers
         public IActionResult Create([Bind("Make,Color,PetName")] Inventory inventory)
         {
             if (!ModelState.IsValid) return View(inventory);
-            try 
+            try
             {
                 _repo.Add(inventory);
             }
@@ -102,7 +102,7 @@ namespace AutoLotMVC_Core2.Controllers
                     $@"Unable to save the record. Another user has updated it. {ex.Message}");
                 return View(inventory);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty,
                     $@"Unable to save the record. {ex.Message}");
