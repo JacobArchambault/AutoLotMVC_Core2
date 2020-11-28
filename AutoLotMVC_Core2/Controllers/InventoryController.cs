@@ -51,7 +51,7 @@ namespace AutoLotMVC_Core2.Controllers
         public IActionResult Create([Bind("Make,Color,PetName")] Inventory inventory)
         {
             if (!ModelState.IsValid) return View(inventory);
-            try 
+            try
             {
                 _repo.Add(inventory);
             }
