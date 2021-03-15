@@ -13,8 +13,7 @@ namespace AutoLotMVC_Core2
             var webHost = CreateHostBuilder(args).Build();
             using (var scope = webHost.Services.CreateScope())
             {
-                var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<AutoLotContext>();
+                var context = scope.ServiceProvider.GetRequiredService<AutoLotContext>();
                 MyDataInitializer.RecreateDatabase(context);
                 MyDataInitializer.InitializeData(context);
             }
