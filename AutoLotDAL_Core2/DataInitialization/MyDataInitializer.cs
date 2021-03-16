@@ -8,14 +8,15 @@ namespace AutoLotDAL_Core2.DataInitialization
     {
         public static void InitializeData(AutoLotContext context)
         {
-            new List<Customer>
+            var customers = new List<Customer>
             {
                 new Customer {FirstName = "Dave", LastName = "Brenner"},
                 new Customer {FirstName = "Matt", LastName = "Walton"},
                 new Customer {FirstName = "Steve", LastName = "Hagen"},
                 new Customer {FirstName = "Pat", LastName = "Walton"},
                 new Customer {FirstName = "Bad", LastName = "Customer"}
-            }.ForEach(x => context.Customers.Add(x));
+            };
+            customers.ForEach(x => context.Customers.Add(x));
             context.SaveChanges();
             var cars = new List<Inventory>
             {
