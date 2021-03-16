@@ -7,21 +7,6 @@ namespace AutoLotDAL_Core2.EF.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CreditRisks",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true),
-                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
-                    LastName = table.Column<string>(maxLength: 50, nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CreditRisks", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Customers",
                 columns: table => new
                 {
@@ -80,13 +65,6 @@ namespace AutoLotDAL_Core2.EF.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CreditRisks_FirstName_LastName",
-                table: "CreditRisks",
-                columns: new[] { "FirstName", "LastName" },
-                unique: true,
-                filter: "[FirstName] IS NOT NULL AND [LastName] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Orders_CarId",
                 table: "Orders",
                 column: "CarId");
@@ -99,9 +77,6 @@ namespace AutoLotDAL_Core2.EF.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "CreditRisks");
-
             migrationBuilder.DropTable(
                 name: "Orders");
 

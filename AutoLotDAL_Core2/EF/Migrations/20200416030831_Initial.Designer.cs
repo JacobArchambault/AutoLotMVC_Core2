@@ -21,35 +21,6 @@ namespace AutoLotDAL_Core2.EF.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AutoLotDAL_Core2.Models.CreditRisk", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
-
-                    b.Property<byte[]>("Timestamp")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FirstName", "LastName")
-                        .IsUnique()
-                        .HasFilter("[FirstName] IS NOT NULL AND [LastName] IS NOT NULL");
-
-                    b.ToTable("CreditRisks");
-                });
-
             modelBuilder.Entity("AutoLotDAL_Core2.Models.Customer", b =>
                 {
                     b.Property<int>("Id")

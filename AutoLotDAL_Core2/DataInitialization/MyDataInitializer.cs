@@ -53,7 +53,6 @@ namespace AutoLotDAL_Core2.DataInitialization
             ExecuteDeleteSql(context, "Orders");
             ExecuteDeleteSql(context, "Customers");
             ExecuteDeleteSql(context, "Inventory");
-            ExecuteDeleteSql(context, "CreditRisks");
             ResetIdentity(context);
         }
         public static void ExecuteDeleteSql(AutoLotContext context, string tableName)
@@ -62,7 +61,7 @@ namespace AutoLotDAL_Core2.DataInitialization
         }
         public static void ResetIdentity(AutoLotContext context)
         {
-            var tables = new[] { "Inventory", "Orders", "Customers", "CreditRisks" };
+            var tables = new[] { "Inventory", "Orders", "Customers"};
             foreach (var itm in tables)
             {
                 context.Database.ExecuteSqlInterpolated($"DBCC CHECKIDENT (\"dbo.{itm}\", RESEED, -1);");
