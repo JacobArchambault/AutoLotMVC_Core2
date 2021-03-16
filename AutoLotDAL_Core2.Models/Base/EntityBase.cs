@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace AutoLotDAL_Core2.Models.Base
 {
-    public class EntityBase
+    public record EntityBase
     {
         [Key]
         public int Id { get; set; }

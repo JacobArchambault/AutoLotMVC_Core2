@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace AutoLotDAL_Core2.Models
 {
     [Table("Inventory")]
-    public partial class Inventory : EntityBase
+    public record Inventory : EntityBase
     {
         [StringLength(50)]
         public string Make { get; set; }

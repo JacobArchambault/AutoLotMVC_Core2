@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace AutoLotDAL_Core2.Models
 {
-    public class Customer : EntityBase
+    public record Customer : EntityBase
     {
         [StringLength(50)]
         [DisplayName("First name")]
