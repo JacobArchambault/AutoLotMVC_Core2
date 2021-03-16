@@ -15,6 +15,12 @@ namespace AutoLotDAL_Core2.Models
         [StringLength(50), DisplayName("Pet name")]
         public string PetName { get; set; }
         public List<Order> Orders { get; set; } = new List<Order>();
+        public override string ToString()
+        {
+            return $"{PetName ?? "**No Name **"} is a {Color} {Make} with ID {Id}.";
+        }
+        [NotMapped]
+        public string MakeColor => $"{Make} ({Color})";
 
     }
 }
