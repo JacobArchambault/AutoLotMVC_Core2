@@ -16,7 +16,7 @@ namespace AutoLotDAL_Core2.DataInitialization
                 new Customer {FirstName = "Pat", LastName = "Walton"},
                 new Customer {FirstName = "Bad", LastName = "Customer"}
             };
-            customers.ForEach(x => context.Customers.Add(x));
+            context.Customers.AddRange(customers);
             context.SaveChanges();
             var cars = new List<Inventory>
             {
@@ -40,7 +40,7 @@ namespace AutoLotDAL_Core2.DataInitialization
                 new Order {Car = cars[2], Customer = customers[2]},
                 new Order {Car = cars[3], Customer = customers[3]},
             };
-            orders.ForEach(x => context.Orders.Add(x));
+            context.Orders.AddRange(orders);
             context.SaveChanges();
         }
         public static void RecreateDatabase(AutoLotContext context)
