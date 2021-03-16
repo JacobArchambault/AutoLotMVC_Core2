@@ -28,7 +28,7 @@ namespace AutoLotDAL_Core2.DataInitialization
                 new Inventory {Make = "BMW", Color = "Black", PetName = "Bimmer"},
                 new Inventory {Make = "BMW", Color = "Green", PetName = "Hank"},
                 new Inventory {Make = "BMW", Color = "Pink", PetName = "Pinky"},
-                new Inventory {Make = "PInto", Color = "Black", PetName = "Pete"},
+                new Inventory {Make = "Pinto", Color = "Black", PetName = "Pete"},
                 new Inventory {Make = "Yugo", Color = "Brown", PetName = "Brownie"},
             };
             context.Cars.AddRange(cars);
