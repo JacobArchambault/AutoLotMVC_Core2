@@ -23,6 +23,11 @@ namespace AutoLotMVC_Core2.Controllers
         // GET: Inventory/Details/5
         public IActionResult Details(int? id)
         {
+            return GetView(id);
+        }
+
+        private IActionResult GetView(int? id)
+        {
             if (id == null)
             {
                 return BadRequest();
@@ -66,17 +71,7 @@ namespace AutoLotMVC_Core2.Controllers
         // GET: Inventory/Edit/5
         public IActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return BadRequest();
-            }
-
-            var inventory = _repo.GetOne(id);
-            if (inventory == null)
-            {
-                return NotFound();
-            }
-            return View(inventory);
+            return GetView(id);
         }
 
         // POST: Inventory/Edit/5
@@ -114,18 +109,7 @@ namespace AutoLotMVC_Core2.Controllers
         // GET: Inventory/Delete/5
         public IActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return BadRequest();
-            }
-
-            var inventory = _repo.GetOne(id);
-            if (inventory == null)
-            {
-                return NotFound();
-            }
-
-            return View(inventory);
+            return GetView(id);
         }
 
         // POST: Inventory/Delete/5
